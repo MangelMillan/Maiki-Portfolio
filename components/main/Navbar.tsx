@@ -42,17 +42,23 @@ export const Navbar = () => {
         </div>
 
         <div className="flex flex-row gap-5">
-          {Socials.map((social) => (
-            <a target={social.target} href={social.href}>
-              <Image
-                src={social.src}
-                alt={social.name}
-                key={social.name}
-                width={24}
-                height={24}
-              />
-            </a>
-          ))}
+          {Socials.map(
+            (
+              social,
+              index // Agrega un segundo parámetro "index" en el mapeo
+            ) => (
+              <a key={index} target={social.target} href={social.href}>
+                {" "}
+                {/* Usa el "index" como "key" */}
+                <Image
+                  src={social.src}
+                  alt={social.name}
+                  width={24}
+                  height={24}
+                />
+              </a>
+            )
+          )}
         </div>
       </div>
     </div>
